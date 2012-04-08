@@ -2,8 +2,6 @@
 Heading1
 ==========
 
-Normal Text
-
 Heading2
 ==========
 
@@ -37,6 +35,8 @@ Heading4
 Blockquotes
 
    This text will be enclosed in an HTML blockquote element.
+
+   Second Paragraph.
 
 Links
 

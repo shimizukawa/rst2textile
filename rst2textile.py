@@ -581,7 +581,7 @@ class TextileTranslator(nodes.NodeVisitor):
         pass
 
     def visit_block_quote(self, node):
-        self.new_state()
+        self.new_state(0)
     def depart_block_quote(self, node):
         self.end_state()
 
@@ -596,7 +596,10 @@ class TextileTranslator(nodes.NodeVisitor):
         pass
     def depart_paragraph(self, node):
         if not isinstance(node.parent, nodes.Admonition):
-            self.end_state()
+            if isinstance(node.parent, nodes.block_quote):
+                self.end_state(first="bq. ")
+            else:
+                self.end_state()
         pass
 
     def visit_target(self, node):
@@ -614,9 +617,9 @@ class TextileTranslator(nodes.NodeVisitor):
         pass
 
     def visit_reference(self, node):
-        pass
+        self.add_text('"')
     def depart_reference(self, node):
-        pass
+        self.add_text('":' + node['refuri'])
 
     def visit_download_reference(self, node):
         pass

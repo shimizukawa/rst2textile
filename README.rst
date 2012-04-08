@@ -32,7 +32,8 @@ Limitation
 ============
 
 * Wrong multibyte charactor width
-* Not supported: Link target, and many syntax.
+* Wrong Heading2 if exist subtitle
+* Not supported: some textile syntax.
 * Not auto install dependency libraries(docutils).
 
 
@@ -179,9 +180,15 @@ Blockquotes
 
          This text will be enclosed in an HTML blockquote element.
 
+         Second Paragraph.
+
    ::
 
-      TODO
+      Blockquotes
+
+      bq. This text will be enclosed in an HTML blockquote element.
+
+      bq. Second Paragraph.
 
 Links
 -------
@@ -193,7 +200,7 @@ Links
 
    ::
 
-      TODO
+      "link text":link_address
 
 Images
 -------
