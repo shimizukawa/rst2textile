@@ -2,6 +2,10 @@
 Heading1
 ==========
 
+:Date: Today
+:Author: SpamEgg
+:Location: Here
+
 Heading2
 ==========
 

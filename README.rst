@@ -87,6 +87,32 @@ Headings
       h4. Heading4
 
 
+Document Information
+-----------------------
+.. container:: test, rst, textile
+
+   ::
+
+      HelloWorld
+      ===========
+
+      :Date: Today
+      :Author: SpamEgg
+      :Location: Here
+
+   ::
+
+      h1. HelloWorld
+
+      Date:
+         Today
+
+      Author:
+         SpamEgg
+
+      Location:
+         Here
+
 Paragraph
 ----------
 
@@ -235,4 +261,3 @@ Inner Reference
       h1. HelloWorld
 
       reference to "HelloWorld" !
-

@@ -719,5 +719,22 @@ class TextileTranslator(nodes.NodeVisitor):
             self.body.append(node.astext())
         raise nodes.SkipNode
 
+    def visit_docinfo(self, node):
+        pass
+    def depart_docinfo(self, node):
+        pass
+
+    def visit_date(self, node):
+        self.states[-1].append((0, ['Date:']))
+        self.new_state()
+    def depart_date(self, node):
+        self.end_state()
+
+    def visit_author(self, node):
+        self.states[-1].append((0, ['Author:']))
+        self.new_state()
+    def depart_author(self, node):
+        self.end_state()
+
     def unknown_visit(self, node):
         raise NotImplementedError('Unknown node: ' + node.__class__.__name__)
