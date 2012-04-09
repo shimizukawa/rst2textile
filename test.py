@@ -7,7 +7,7 @@ import docutils.core
 import docutils.nodes
 import docutils.writers
 
-from rst2textile import TextileWriter  #TODO: registration and name lookup
+from docutils_textile.writer import TextileWriter  #TODO: registration and name lookup
 
 
 class ReSTTestCase(unittest.TestCase):
