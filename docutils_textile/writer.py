@@ -621,7 +621,9 @@ class TextileTranslator(nodes.NodeVisitor):
     def visit_reference(self, node):
         self.add_text('"')
     def depart_reference(self, node):
-        self.add_text('":' + node['refuri'])
+        self.add_text('"')
+        if 'refuri' in node:
+            self.add_text(':' + node['refuri'])
 
     def visit_download_reference(self, node):
         pass

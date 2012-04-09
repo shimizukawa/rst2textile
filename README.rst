@@ -218,3 +218,21 @@ Images
 
       !imageurl!
 
+
+Inner Reference
+----------------
+.. container:: test, rst, textile
+
+   ::
+
+      HelloWorld
+      ===========
+
+      reference to HelloWorld_ !
+
+   ::
+
+      h1. HelloWorld
+
+      reference to "HelloWorld" !
+
