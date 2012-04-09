@@ -13,8 +13,9 @@ Run
 
 ::
 
+   $ rst2textile.py input.rst output.txt
+   $ #or
    $ python -m rst2textile input.rst output.txt
-
 
 Test
 =====
@@ -22,8 +23,6 @@ Test
 ::
 
    $ python test.py
-   $ #or
-   $ pysetup run test --suite=test.suite
 
 Depends
 ========
