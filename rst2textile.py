@@ -139,17 +139,17 @@ class TextileTranslator(nodes.NodeVisitor):
         if isinstance(node.parent, nodes.Admonition):
             self.add_text(node.astext()+': ')
             raise nodes.SkipNode
+        if isinstance(node.parent, nodes.document):
+            self.sectionlevel += 1
         self.new_state(0)
     def depart_title(self, node):
-        heading = 'h%d. ' % (self.sectionlevel + 1)
+        heading = 'h%d. ' % (self.sectionlevel)
         text = ''.join(x[1] for x in self.states.pop() if x[0] == -1)
         self.stateindent.pop()
         self.states[-1].append((0, ['', heading + text, '']))
 
-    def visit_subtitle(self, node):
-        pass
-    def depart_subtitle(self, node):
-        pass
+    visit_subtitle = visit_title
+    depart_subtitle = depart_title
 
     def visit_attribution(self, node):
         self.add_text('-- ')
