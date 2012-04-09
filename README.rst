@@ -8,6 +8,7 @@ Install
    $ pip install docutils
    $ pip install https://bitbucket.org/shimizukawa/rst2textile/get/tip.zip
 
+
 Run
 ======
 
@@ -17,6 +18,7 @@ Run
    $ #or
    $ python -m rst2textile input.rst output.txt
 
+
 Test
 =====
 
@@ -24,17 +26,26 @@ Test
 
    $ python test.py
 
+
 Depends
 ========
 * Python 2.7
 * Docutils 8.1
 
+
 Limitation
 ============
 
-* Wrong multibyte charactor width
-* Not supported: some textile syntax.
+* Not supported: some textile syntax at http://redcloth.org/textile
 * Not auto install dependency libraries(docutils).
+
+
+ToDo
+=====
+* feature: Sphinx hook point
+* Documentation
+* Python3 Support & test
+* Python2.6 Support & test
 
 
 Convert Samples
