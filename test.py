@@ -88,3 +88,7 @@ class ReSTTestSuite(unittest.TestSuite):
 def suite():
     suite = ReSTTestSuite('README.rst')
     return suite
+
+
+if __name__ == '__main__':
+    unittest.main(defaultTest='suite')
