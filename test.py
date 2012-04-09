@@ -7,7 +7,10 @@ import docutils.core
 import docutils.nodes
 import docutils.writers
 
-from docutils_textile.writer import TextileWriter  #TODO: registration and name lookup
+
+WRITER_ALIASES = {
+    'textile': 'docutils_textile',
+}
 
 
 class ReSTTestCase(unittest.TestCase):
@@ -53,14 +56,14 @@ class DocutilsTestTranslator(docutils.nodes.NodeVisitor):
                 raise RuntimeError('Need 2 elements "from", "to"')
 
             _, _from, _to = node['classes'][:3]
+            _to = WRITER_ALIASES.get(_to, _to)
             source_node, expect_node = node.children
             source = source_node.astext()
             expect = expect_node.astext()
-            writer = TextileWriter()  #TODO: registration and name lookup
             actual = docutils.core.publish_string(
                     source,
                     parser_name=_from,
-                    writer=writer)
+                    writer_name=_to)
             actual = actual.strip()
             self.body.append(ReSTTestCase(
                 _from, _to, source, expect, actual))
