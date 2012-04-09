@@ -21,6 +21,8 @@ Test
 
 ::
 
+   $ python test.py
+   $ #or
    $ pysetup run test --suite=test.suite
 
 Depends
@@ -32,7 +34,6 @@ Limitation
 ============
 
 * Wrong multibyte charactor width
-* Wrong Heading2 if exist subtitle
 * Not supported: some textile syntax.
 * Not auto install dependency libraries(docutils).
 
