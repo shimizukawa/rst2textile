@@ -110,6 +110,9 @@ def cfg_to_args(path='setup.cfg'):
             # support multiline options
             in_cfg_value = split_multiline(in_cfg_value)
 
+        if arg == 'packages':
+            in_cfg_value = map(str, in_cfg_value)
+
         kwargs[arg] = in_cfg_value
 
     return kwargs
