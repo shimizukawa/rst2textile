@@ -3,3 +3,4 @@ _dist
 MANIFEST
 .*.pyc
 .*.orig
+.*.egg-info

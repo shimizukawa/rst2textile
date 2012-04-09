@@ -5,8 +5,12 @@ Install
 
 ::
 
-   $ pip install docutils
    $ pip install https://bitbucket.org/shimizukawa/rst2textile/get/tip.zip
+
+or::
+
+   $ pysetup install docutils
+   $ pysetup install https://bitbucket.org/shimizukawa/rst2textile/get/tip.zip
 
 
 Run
@@ -15,7 +19,9 @@ Run
 ::
 
    $ rst2textile.py input.rst output.txt
-   $ #or
+
+or::
+
    $ python -m rst2textile input.rst output.txt
 
 
@@ -24,8 +30,13 @@ Test
 
 ::
 
+   $ python setup.py test
+
+or::
+
    $ python test.py
 
+**'pysetup run test' not working.**
 
 Depends
 ========
@@ -35,9 +46,8 @@ Depends
 
 Limitation
 ============
-
 * Not supported: some textile syntax at http://redcloth.org/textile
-* Not auto install dependency libraries(docutils).
+* pysetup: Not support auto install dependency libraries(docutils).
 
 
 ToDo
