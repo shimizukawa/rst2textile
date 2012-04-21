@@ -52,12 +52,13 @@ class DocutilsTestTranslator(docutils.nodes.NodeVisitor):
 
     def visit_container(self, node):
         if 'classes' in node and 'test' in node['classes']:
-            if len(node.children) != 2:
-                raise RuntimeError('Need 2 elements "from", "to"')
+            literals = [x for x in node.children if x.tagname=='literal_block']
+            if len(literals) < 2:
+                raise RuntimeError('Need 2 literal-block elements "from", "to"')
 
             _, _from, _to = node['classes'][:3]
             _to = WRITER_ALIASES.get(_to, _to)
-            source_node, expect_node = node.children
+            source_node, expect_node = literals[:2]  #discard over 2 nodes.
             source = source_node.astext()
             expect = expect_node.astext()
             actual = docutils.core.publish_string(

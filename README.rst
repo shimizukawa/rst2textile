@@ -40,8 +40,8 @@ or::
 
 Depends
 ========
-* Python 2.7
-* Docutils 8.1
+* Python 2.7 (other version are not tested)
+* Docutils 8.1 (other version are not tested)
 
 
 Limitation
@@ -65,13 +65,13 @@ Heading1
 ---------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       ==========
       Heading1
       ==========
 
-   ::
+   textile::
 
       h1. Heading1
 
@@ -79,7 +79,7 @@ Headings
 ---------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       ==========
       Heading1
@@ -94,7 +94,7 @@ Headings
       Heading4
       ^^^^^^^^^^
 
-   ::
+   textile::
 
       h1. Heading1
 
@@ -112,7 +112,7 @@ Document Information
 -----------------------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       HelloWorld
       ===========
@@ -121,7 +121,7 @@ Document Information
       :Author: SpamEgg
       :Location: Here
 
-   ::
+   textile::
 
       h1. HelloWorld
 
@@ -139,11 +139,11 @@ Paragraph
 
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       Normal Text
 
-   ::
+   textile::
 
       Normal Text
 
@@ -152,11 +152,11 @@ Emphasized
 
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       *emphasized* (e.g., italics)
 
-   ::
+   textile::
 
       _emphasized_ (e.g., italics)
 
@@ -164,11 +164,11 @@ Strongly emphasized
 --------------------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       **strongly emphasized** (e.g., boldface)
 
-   ::
+   textile::
 
       *strongly emphasized* (e.g., boldface)
 
@@ -176,7 +176,7 @@ List items
 -----------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       - An item in a bulleted (unordered) list
 
@@ -188,7 +188,7 @@ List items
 
           * Third level
 
-   ::
+   textile::
 
       * An item in a bulleted (unordered) list
 
@@ -204,7 +204,7 @@ Enumerated list items
 ----------------------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       #. An item in an enumerated (ordered) list xxxxxxx
 
@@ -213,7 +213,7 @@ Enumerated list items
          #. Another level in an enumerated list vvvvvvvv
 
 
-   ::
+   textile::
 
       1. An item in an enumerated (ordered) list xxxxxxx
 
@@ -225,7 +225,7 @@ Blockquotes
 ------------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       Blockquotes
 
@@ -233,7 +233,7 @@ Blockquotes
 
          Second Paragraph.
 
-   ::
+   textile::
 
       Blockquotes
 
@@ -245,11 +245,11 @@ Links
 -------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       `link text <link_address>`_
 
-   ::
+   textile::
 
       "link text":link_address
 
@@ -257,11 +257,11 @@ Images
 -------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
        .. image:: imageurl
 
-   ::
+   textile::
 
       !imageurl!
 
@@ -270,14 +270,14 @@ Inner Reference
 ----------------
 .. container:: test, rst, textile
 
-   ::
+   rst::
 
       HelloWorld
       ===========
 
       reference to HelloWorld_ !
 
-   ::
+   textile::
 
       h1. HelloWorld
 
