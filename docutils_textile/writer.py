@@ -3,8 +3,8 @@
 """
 docutils textile writer.
 
-:copyright: Copyright 2011 by Takayuki SHIMIZUKAWA.
-:license: MIT.
+:copyright: Copyright 2012 by Takayuki SHIMIZUKAWA.
+:license: Apache Software License
 """
 
 __docformat__ = 'reStructuredText'
