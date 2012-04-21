@@ -4,19 +4,22 @@ from __future__ import absolute_import
 """
 docutils textile.
 
-:copyright: Copyright 2011 by Takayuki SHIMIZUKAWA.
-:license: MIT.
+:copyright: Copyright 2012 by Takayuki SHIMIZUKAWA.
+:license: Apache Software License
 """
 
 __docformat__ = 'reStructuredText'
 
 import docutils.core
 
+description = """`rst2textile` is docutils textile writer convert reStructuredText(rst) to Textile format."""
+
+
 def main():
     output = docutils.core.publish_cmdline(
             writer_name='docutils_textile',
             usage='usage',
-            description='description',
+            description=description,
             )
     return 0
 
