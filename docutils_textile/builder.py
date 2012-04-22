@@ -63,6 +63,10 @@ class SphinxTextileBuilder(TextBuilder):
     def post_process_images(self, doctree):
         for node in doctree.traverse(nodes.image):
             candidate = node['uri']
+            if candidate.startswith(self.outdir):
+                candidate = candidate[len(self.outdir):]
+            candidate = candidate.replace('\\', '/').lstrip('/')
+            node['uri'] = candidate
             if candidate not in self.env.images:
                 # non-existing URI; let it alone
                 continue
