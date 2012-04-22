@@ -57,6 +57,15 @@ ToDo
 * Python2.6 Support & test
 
 
+History
+========
+
+0.1.0 (2012/4/22)
+------------------
+* first release
+* supported syntax: h1/h2.., docinfo, paragraph, *em*, **strong**, list-item, enum-item, blockquote, link, image, literal
+
+
 Convert Samples
 ==================
 
