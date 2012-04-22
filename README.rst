@@ -1,15 +1,44 @@
 `rst2textile` is docutils textile writer convert reStructuredText(rst) to Textile format.
 
+Features
+==========
+
+* Docutils writer for textile.
+
+  * supported syntaxes are:
+
+    * headings: h1/h2..
+    * docinfo: field-list (like `:Date: today`) at top of rst file.
+    * paragraph
+    * emphasis: `*em*`
+    * strong: `**strong**`
+    * list-item: `* egg`
+    * enum-item: `#. ham`
+    * blockquote
+    * link: `\`foo <http://example.com/>\`_`
+    * image: `.. image:: http://example.com/image.png`
+    * literal: `\`\`some code\`\`` and `::`
+
+* Sphinx textile builder (experimental).
+
+  #. write conf.py `extensions = ['docutils_textile']`
+  #. build by `sphinx-build -b textile source _build/textile`
+
 Install
 ========
 
 ::
 
-   $ pip install https://bitbucket.org/shimizukawa/rst2textile/get/tip.zip
+   $ pip install rst2textile
 
 or::
 
    $ pysetup install docutils
+   $ pysetup install rst2textile
+
+
+If you wanto to use unrelease version, you can install from repository::
+
    $ pysetup install https://bitbucket.org/shimizukawa/rst2textile/get/tip.zip
 
 
