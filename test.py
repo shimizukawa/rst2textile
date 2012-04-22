@@ -14,11 +14,12 @@ WRITER_ALIASES = {
 
 
 class ReSTTestCase(unittest.TestCase):
-    def __init__(self, _from, _to, source, expect, actual):
+    def __init__(self, _from, _to, source, expect, actual, node_tree):
         unittest.TestCase.__init__(self)
         self.source = source
         self.expect = expect
         self.actual = actual
+        self.node_tree = node_tree
         self._from = _from
         self._to = _to
 
@@ -33,8 +34,11 @@ class ReSTTestCase(unittest.TestCase):
 
         ##actual:
         %s
+
+        ##node-tree:
+        %s
         """)
-        message = message % (self._from, self._to, self.source, self.expect, self.actual)
+        message = message % (self._from, self._to, self.source, self.expect, self.actual, self.node_tree)
         self.assertEqual(self.expect, self.actual, message)
 
 
@@ -66,8 +70,12 @@ class DocutilsTestTranslator(docutils.nodes.NodeVisitor):
                     parser_name=_from,
                     writer_name=_to)
             actual = actual.strip()
+            node_tree = docutils.core.publish_string(
+                    source,
+                    parser_name=_from,
+                    writer_name="pseudoxml").strip()
             self.body.append(ReSTTestCase(
-                _from, _to, source, expect, actual))
+                _from, _to, source, expect, actual, node_tree))
 
         raise docutils.nodes.SkipNode
 
