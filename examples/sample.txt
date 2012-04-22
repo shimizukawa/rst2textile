@@ -10,7 +10,6 @@ Author:
 Location:
    Here
 
-
 h2. Heading2
 
 
@@ -20,35 +19,22 @@ h3. Heading3
 h4. Heading4
 
 _emphasized_ (e.g., italics)
-
 *strongly emphasized* (e.g., boldface)
-
 * An item in a bulleted (unordered) list
-
 * Another item in a bulleted list
-
-  * Second Level
-
-  * Second Level Items
-
-    * Third level
-
-1. An item in an enumerated (ordered) list xxxxxxx
-
-2. Another item in an enumerated list yyyyyy
-
-   1. Another level in an enumerated list vvvvvvvv
-
+** Second Level
+** Second Level Items
+*** Third level
+# An item in an enumerated (ordered) list xxxxxxx
+# Another item in an enumerated list yyyyyy
+## Another level in an enumerated list vvvvvvvv
 Blockquotes
 
 bq. This text will be enclosed in an HTML blockquote element.
-
 bq. Second Paragraph.
-
 Links
 
 bq. "link text":link_address
-
 Images
 
 !imageurl!
