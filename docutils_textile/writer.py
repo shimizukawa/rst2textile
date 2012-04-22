@@ -737,4 +737,4 @@ class TextileTranslator(nodes.NodeVisitor):
         self.end_state()
 
     def unknown_visit(self, node):
-        raise NotImplementedError('Unknown node: ' + node.__class__.__name__)
+        raise nodes.SkipNode
