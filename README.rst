@@ -36,7 +36,7 @@ or::
 
    $ python test.py
 
-**currently, 'pysetup run test' not working.**
+*currently, 'pysetup run test' not working.*
 
 Depends
 ========
