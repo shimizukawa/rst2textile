@@ -107,6 +107,9 @@ def cfg_to_args(path='setup.cfg'):
             else:
                 continue
 
+        if arg in ('name', 'version'):  #need 'str' type
+            in_cfg_value = str(in_cfg_value)
+
         if arg == 'package_dir' and in_cfg_value:
             in_cfg_value = {'': in_cfg_value}
 
