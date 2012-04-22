@@ -228,7 +228,7 @@ class TextileTranslator(nodes.NodeVisitor):
         self.end_state()
 
     def visit_figure(self, node):
-        self.new_state()
+        self.new_state(0)
     def depart_figure(self, node):
         self.end_state()
 

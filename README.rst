@@ -253,11 +253,15 @@ Images
 
    rst::
 
-       .. image:: imageurl
+       .. image:: http://example.com/image.jpg
+
+       .. figure:: local/image/path.png
 
    textile::
 
-      !imageurl!
+      !http://example.com/image.jpg!
+
+      !local/image/path.png!
 
 
 Inner Reference
