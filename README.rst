@@ -280,3 +280,29 @@ Inner Reference
       h1. HelloWorld
 
       reference to "HelloWorld" !
+
+
+Literal (code)
+----------------
+.. container:: test, rst, textile
+
+   rst::
+
+      ::
+
+         class Foo(object):
+
+             def __init__(self, value):
+                 print "value = %d" % value
+                 raise NotImplementedError(u'EmptyClass')
+
+   textile::
+
+      <pre>
+      class Foo(object):
+
+          def __init__(self, value):
+              print "value = %d" % value
+              raise NotImplementedError(u'EmptyClass')
+      </pre>
+

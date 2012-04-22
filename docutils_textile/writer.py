@@ -564,9 +564,9 @@ class TextileTranslator(nodes.NodeVisitor):
         self.end_state()
 
     def visit_literal_block(self, node):
-        self.new_state()
+        self.new_state(0)
     def depart_literal_block(self, node):
-        self.end_state(wrap=False)
+        self.end_state(wrap=False, first="<pre>\n", end=['</pre>'])
 
     def visit_doctest_block(self, node):
         self.new_state(0)
