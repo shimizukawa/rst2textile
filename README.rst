@@ -36,7 +36,7 @@ or::
 
    $ python test.py
 
-**'pysetup run test' not working.**
+**currently, 'pysetup run test' not working.**
 
 Depends
 ========
@@ -52,7 +52,6 @@ Limitation
 
 ToDo
 =====
-* feature: Sphinx hook point
 * Documentation
 * Python3 Support & test
 * Python2.6 Support & test
@@ -192,9 +191,9 @@ List items
 
       * An item in a bulleted (unordered) list
       * Another item in a bulleted list
-        * Second Level
-        * Second Level Items
-          * Third level
+      ** Second Level
+      ** Second Level Items
+      *** Third level
 
 Enumerated list items
 ----------------------
@@ -208,13 +207,15 @@ Enumerated list items
          #. Another level in an enumerated list vvvvvvvv
          #. Another level in an enumerated list vvvvvvvv
 
+      #. 3rd element at indent level1
 
    textile::
 
-      1. An item in an enumerated (ordered) list xxxxxxx
-      2. Another item in an enumerated list yyyyyy
-         1. Another level in an enumerated list vvvvvvvv
-         2. Another level in an enumerated list vvvvvvvv
+      # An item in an enumerated (ordered) list xxxxxxx
+      # Another item in an enumerated list yyyyyy
+      ## Another level in an enumerated list vvvvvvvv
+      ## Another level in an enumerated list vvvvvvvv
+      # 3rd element at indent level1
 
 Blockquotes
 ------------

@@ -446,7 +446,7 @@ class TextileTranslator(nodes.NodeVisitor):
     def visit_list_item(self, node):
         if self.list_counter[-1] == -1:
             # bullet list
-            self.new_state(2)
+            self.new_state(0)
             #indent = sum(self.stateindent)
             #self.add_text("*" * indent)
         elif self.list_counter[-1] == -2:
@@ -455,14 +455,16 @@ class TextileTranslator(nodes.NodeVisitor):
         else:
             # enumerated list
             self.list_counter[-1] += 1
-            self.new_state(len(str(self.list_counter[-1])) + 2)
+            self.new_state(0)
     def depart_list_item(self, node):
         if self.list_counter[-1] == -1:
-            self.end_state(first='* ', end=None)
+            bullet = '*' * len(self.list_counter)
+            self.end_state(first=bullet+' ', end=None)
         elif self.list_counter[-1] == -2:
             pass
         else:
-            self.end_state(first='%s. ' % self.list_counter[-1], end=None)
+            bullet = '#' * len(self.list_counter)
+            self.end_state(first=bullet+' ', end=None)
 
     def visit_definition_list_item(self, node):
         self._li_has_classifier = len(node) >= 2 and \
