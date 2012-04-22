@@ -191,13 +191,9 @@ List items
    textile::
 
       * An item in a bulleted (unordered) list
-
       * Another item in a bulleted list
-
         * Second Level
-
         * Second Level Items
-
           * Third level
 
 Enumerated list items
@@ -207,19 +203,18 @@ Enumerated list items
    rst::
 
       #. An item in an enumerated (ordered) list xxxxxxx
-
       #. Another item in an enumerated list yyyyyy
 
+         #. Another level in an enumerated list vvvvvvvv
          #. Another level in an enumerated list vvvvvvvv
 
 
    textile::
 
       1. An item in an enumerated (ordered) list xxxxxxx
-
       2. Another item in an enumerated list yyyyyy
-
          1. Another level in an enumerated list vvvvvvvv
+         2. Another level in an enumerated list vvvvvvvv
 
 Blockquotes
 ------------
@@ -238,7 +233,6 @@ Blockquotes
       Blockquotes
 
       bq. This text will be enclosed in an HTML blockquote element.
-
       bq. Second Paragraph.
 
 Links
@@ -247,11 +241,11 @@ Links
 
    rst::
 
-      `link text <link_address>`_
+      `link text and link target url <http://www.example.com/link/target/address>`_
 
    textile::
 
-      "link text":link_address
+      "link text and link target url":http://www.example.com/link/target/address
 
 Images
 -------

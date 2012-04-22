@@ -73,7 +73,8 @@ class TextileTranslator(nodes.NodeVisitor):
             if not toformat:
                 return
             if wrap:
-                res = textwrap.wrap(''.join(toformat), width=MAXWIDTH-maxindent)
+                #res = textwrap.wrap(''.join(toformat), width=MAXWIDTH-maxindent)
+                res = ''.join(toformat).splitlines()
             else:
                 res = ''.join(toformat).splitlines()
             if end:
@@ -585,7 +586,7 @@ class TextileTranslator(nodes.NodeVisitor):
     def visit_block_quote(self, node):
         self.new_state(0)
     def depart_block_quote(self, node):
-        self.end_state()
+        self.end_state(first="\n")
 
     def visit_compact_paragraph(self, node):
         pass
@@ -599,9 +600,9 @@ class TextileTranslator(nodes.NodeVisitor):
     def depart_paragraph(self, node):
         if not isinstance(node.parent, nodes.Admonition):
             if isinstance(node.parent, nodes.block_quote):
-                self.end_state(first="bq. ")
+                self.end_state(first="bq. ", end=None)
             else:
-                self.end_state()
+                self.end_state(end=None)
         pass
 
     def visit_target(self, node):
