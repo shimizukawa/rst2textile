@@ -1,11 +1,15 @@
-from __future__ import absolute_import
-
-import io
+import sys
 import unittest
 import textwrap
 import docutils.core
 import docutils.nodes
 import docutils.writers
+
+
+if sys.version_info >= (3, 0):
+    py3 = True
+else:
+    py3 = False
 
 
 WRITER_ALIASES = {
@@ -68,7 +72,8 @@ class DocutilsTestTranslator(docutils.nodes.NodeVisitor):
             actual = docutils.core.publish_string(
                     source,
                     parser_name=_from,
-                    writer_name=_to)
+                    writer_name=_to,
+                    settings_overrides={'output_encoding': 'unicode'})
             actual = actual.strip()
             node_tree = docutils.core.publish_string(
                     source,
@@ -90,10 +95,14 @@ class DocutilsTestWriter(docutils.writers.Writer):
 class ReSTTestSuite(unittest.TestSuite):
 
     def __init__(self, filename):
-        with io.open(filename, 'rt', encoding='utf8') as f:
-            tests = docutils.core.publish_string(
-                    source=f.read(), source_path=f.name,
-                    writer=DocutilsTestWriter())
+        f = open(filename, 'rt')
+        data = f.read()
+        if not py3:
+            data = data.decode('utf8')
+        tests = docutils.core.publish_string(
+                source=data, source_path=f.name,
+                writer=DocutilsTestWriter())
+        f.close()
         unittest.TestSuite.__init__(self, tests)
 
 

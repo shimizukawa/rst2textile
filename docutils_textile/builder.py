@@ -1,5 +1,4 @@
 # -*- coding: utf8 -*-
-from __future__ import absolute_import
 """
 docutils textile builder.
 
@@ -19,7 +18,7 @@ try:
 except ImportError:
     raise ImportError("sphinx: you NEED Sphinx installation if you want to use `docutils_textile.builder`.")
 
-from .writer import TextileWriter, TextileTranslator
+from docutils_textile.writer import TextileWriter, TextileTranslator
 
 
 class SphinxTextileTranslator(TextileTranslator):

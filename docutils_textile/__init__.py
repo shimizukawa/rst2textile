@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 """
 docutils textile.
 
@@ -8,11 +7,11 @@ docutils textile.
 
 __docformat__ = 'reStructuredText'
 
-from .writer import TextileWriter as Writer  #for docutils rule.
+from docutils_textile.writer import TextileWriter as Writer  #for docutils rule.
     #if docutils receive 'foo' as writer name, execute `import foo.Writer`.
 
 
 # setup hook for sphinx
 def setup(app):
-    from .builder import SphinxTextileBuilder
+    from docutils_textile.builder import SphinxTextileBuilder
     app.add_builder(SphinxTextileBuilder)  #sphinx builder registration
