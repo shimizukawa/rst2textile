@@ -107,7 +107,8 @@ def cfg_to_args(path='setup.cfg'):
             else:
                 continue
 
-        if arg in ('name', 'version'):  #need 'str' type
+        if arg in ('name', 'version', 'packages'):
+            #need 'str' type
             in_cfg_value = str(in_cfg_value)
 
         if arg == 'package_dir' and in_cfg_value:
@@ -116,9 +117,6 @@ def cfg_to_args(path='setup.cfg'):
         if arg in MULTI_FIELDS:
             # support multiline options
             in_cfg_value = split_multiline(in_cfg_value)
-
-        if arg == 'packages':
-            in_cfg_value = map(str, in_cfg_value)
 
         if arg == 'requires':
             # support setuptools requires feature
