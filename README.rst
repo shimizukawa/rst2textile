@@ -69,8 +69,8 @@ or::
 
 Depends
 ========
-* Python 2.7 (other version are not tested)
-* Docutils 8.1 (other version are not tested)
+* Python 2.4 - 2.7, 3.2
+* Docutils 0.5 - 0.8.1
 
 
 Limitation
@@ -82,9 +82,7 @@ Limitation
 ToDo
 =====
 * Documentation
-* Python3 Support & test
-* Python2.6 Support & test
-
+* Implement some textile format.
 
 History
 ========
