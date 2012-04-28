@@ -4,3 +4,4 @@ MANIFEST
 .*.pyc
 .*.orig
 .*.egg-info
+\.tox
