@@ -69,7 +69,7 @@ or::
 
 Depends
 ========
-* Python 2.4 - 2.7, 3.2
+* Python 2.4 - 2.7, 3.1 - 3.3
 * Docutils 0.5 - 0.8.1
 
 
