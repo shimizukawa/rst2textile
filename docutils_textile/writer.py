@@ -369,43 +369,26 @@ class TextileTranslator(nodes.NodeVisitor):
             if line == 'sep':
                 separator = len(fmted_rows)
             else:
-                cells = []
-                for i, cell in enumerate(line):
-                    par = textwrap.wrap(cell, width=colwidths[i])
-                    if par:
-                        maxwidth = max(map(len, par))
-                    else:
-                        maxwidth = 0
-                    realwidths[i] = max(realwidths[i], maxwidth)
-                    cells.append(par)
+                cells = [[l] for l in line]
                 fmted_rows.append(cells)
 
-        def writesep(char='-'):
-            out = ['+']
-            for width in realwidths:
-                out.append(char * (width+2))
-                out.append('+')
-            self.add_text(''.join(out) + '\n')
-
-        def writerow(row):
+        def writerow(row, heading=False):
             lines = map(None, *row)
             for line in lines:
-                out = ['|']
+                out = ['|_. ' if heading else '|']
                 for i, cell in enumerate(line):
                     if cell:
                         out.append(' ' + cell.ljust(realwidths[i]+1))
                     else:
                         out.append(' ' * (realwidths[i] + 2))
-                    out.append('|')
+                    out.append('|_. ' if heading and len(line) - 1 != i else '|')
                 self.add_text(''.join(out) + '\n')
 
         for i, row in enumerate(fmted_rows):
-            if separator and i == separator:
-                writesep('=')
+            if separator and i == 0:
+                writerow(row, heading=True)
             else:
-                writesep('-')
-            writerow(row)
-        writesep('-')
+                writerow(row)
         self.table = None
         self.end_state(wrap=False)
 
