@@ -18,6 +18,7 @@ Features
     * link: `\`foo <http://example.com/>\`_`
     * image: `.. image:: http://example.com/image.png`
     * literal: `\`\`some code\`\`` and `::`
+    * some table syntax
 
 * Sphinx textile builder (experimental).
 
