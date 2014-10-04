@@ -18,7 +18,7 @@ extras_require = {
 }
 
 setup(name='rst2textile',
-      version='0.2.0',
+      version='0.3.0',
       description='rst2textile is docutils textile writer convert reStructuredText(rst) to Textile format.',
       long_description=README,
       classifiers=[
