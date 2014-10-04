@@ -63,8 +63,8 @@ or::
 
 Depends
 ========
-* Python 2.4 - 2.7, 3.1 - 3.3
-* Docutils 0.5 - 0.8.1
+* Python 2.6, 2.7, 3.3, 3.4
+* Docutils 0.12, 0.11, 0.10
 
 
 Limitation
@@ -84,6 +84,8 @@ CHANGES
 ------------------
 * add support textile table output. Thanks to tell-k.
 * remove pysetup related lines.
+* change supported python versions: 2.6, 2.7, 3.3, 3.4
+* change supported docutils versions: 0.12, 0.11, 0.10
 
 0.1.1 (2012/4/29)
 ------------------
