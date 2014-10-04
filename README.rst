@@ -80,7 +80,7 @@ ToDo
 CHANGES
 ========
 
-0.2.0 (unreleased)
+0.2.0 (2014/10/04)
 ------------------
 * add support textile table output. Thanks to tell-k.
 * remove pysetup related lines.
