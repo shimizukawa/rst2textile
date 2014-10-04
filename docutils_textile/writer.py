@@ -11,6 +11,10 @@ __docformat__ = 'reStructuredText'
 
 import re
 import textwrap
+try:
+    from itertools import zip_longest
+except:
+    from itertools import izip_longest as zip_longest
 
 from docutils import nodes, writers
 
@@ -373,7 +377,7 @@ class TextileTranslator(nodes.NodeVisitor):
                 fmted_rows.append(cells)
 
         def writerow(row, heading=False):
-            lines = zip(*row)
+            lines = zip_longest(*row)
             for line in lines:
                 out = ['|_. ' if heading else '|']
                 for i, cell in enumerate(line):

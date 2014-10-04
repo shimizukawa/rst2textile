@@ -80,8 +80,9 @@ ToDo
 CHANGES
 ========
 
-0.3.0 (unreleased)
+0.2.1 (2014/10/04)
 ------------------
+* Fix: number of table columns reduced to shorter row.
 
 
 0.2.0 (2014/10/04)
