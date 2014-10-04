@@ -373,7 +373,7 @@ class TextileTranslator(nodes.NodeVisitor):
                 fmted_rows.append(cells)
 
         def writerow(row, heading=False):
-            lines = map(None, *row)
+            lines = zip(*row)
             for line in lines:
                 out = ['|_. ' if heading else '|']
                 for i, cell in enumerate(line):
