@@ -31,15 +31,10 @@ Install
 
    $ pip install rst2textile
 
-or::
-
-   $ pysetup install docutils
-   $ pysetup install rst2textile
-
 
 If you wanto to use unrelease version, you can install from repository::
 
-   $ pysetup install https://bitbucket.org/shimizukawa/rst2textile/get/tip.zip
+   $ pip install -e hg+https://bitbucket.org/shimizukawa/rst2textile#egg=rst2textile
 
 
 Run
@@ -65,7 +60,6 @@ or::
 
    $ python test.py
 
-*currently, 'pysetup run test' not working.*
 
 Depends
 ========
@@ -76,7 +70,6 @@ Depends
 Limitation
 ============
 * Not supported: some textile syntax at http://redcloth.org/textile
-* pysetup: Not support auto install dependency libraries(docutils).
 
 
 ToDo
@@ -87,10 +80,10 @@ ToDo
 CHANGES
 ========
 
-0.1.2 (unreleased)
+0.2.0 (unreleased)
 ------------------
 * add support textile table output. Thanks to tell-k.
-
+* remove pysetup related lines.
 
 0.1.1 (2012/4/29)
 ------------------
