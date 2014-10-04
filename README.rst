@@ -84,11 +84,12 @@ ToDo
 * Documentation
 * Implement some textile format.
 
-History
+CHANGES
 ========
 
 0.1.2 (unreleased)
 ------------------
+* add support textile table output. Thanks to tell-k.
 
 
 0.1.1 (2012/4/29)
